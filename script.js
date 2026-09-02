@@ -3,13 +3,13 @@ function myFunction() {
 }
 
 function flower() {
-    location.href = "hibicus-flower.html";
+    location.href = "hibiscus-flower.html";
 }
 
 function plant() {
     location.href = "money-plant.html";
 }
-
+hi
 function aleon() {
     location.href = "aleon.html";
 }
