@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .payment-container {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #424144;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="payment-container">
+
+        <h2>Payment Details</h2>
+
+        <form onsubmit="makePayment(event)">
+
+            <label for="cardholder_name">Cardholder Name</label>
+            <input type="text" id="cardholder_name" required>
+
+            <label for="card_number">Card Number</label>
+            <input type="text" id="card_number" required>
+
+            <label for="expiry_date">Expiry Date</label>
+            <input type="text" id="expiry_date" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV</label>
+            <input type="password" id="cvv" required>
+
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" required>
+
+            <label for="currency">Currency</label>
+            <select id="currency" required>
+                <option value="INR">INR</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+            </select>
+
+            <input type="submit" value="Submit Payment">
+
+        </form>
+
+    </div>
+
+    <script>
+        function makePayment(event) {
+            event.preventDefault();
+
+            alert("Payment submitted successfully!");
+
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>

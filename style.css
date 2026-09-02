@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100%;
+}
+
+/* Navigation Bar */
+
+.navbar {
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #f3f4f6;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Plantora Logo */
+
+.navbar .logo img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+/* Menu */
+
+.navbar .menu {
+    list-style: none;
+}
+
+.navbar .menu li {
+    display: inline-block;
+}
+
+.navbar .menu li a {
+    display: block;
+    margin-left: 20px;
+    color: #424144;
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar .menu li .active {
+    border-bottom: 4px solid #f63e4e;
+}
+
+.navbar .menu li a:hover {
+    border-bottom: 4px solid #f63e4e;
+}
+
+
+/* Background */
+
+.content {
+    background-image: url("./back.webp");
+    background-size: cover;
+    background-position: center;
+    height: 25vh;
+    position: relative;
+}
+
+
+/* Shop Button */
+
+.content button {
+    border: none;
+    color: white;
+    font-size: 35px;
+    border-radius: 9px;
+    cursor: pointer;
+    background: green;
+    position: absolute;
+    top: 40%;
+    left: 17%;
+    padding: 10px 20px;
+}
+
+.content button:hover {
+    background: darkgreen;
+}
+
+
+/* Product Heading */
+
+.pheading {
+    text-align: center;
+    margin: 20px 0;
+    color: #424144;
+}
+
+
+/* Products */
+
+.sec {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+
+/* Product Card */
+
+.card {
+    border: 2px solid rgb(53, 245, 111);
+    border-radius: 12px;
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+
+/* Product Images */
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* Product Name */
+
+.card .desc {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+/* Product Description */
+
+.card .title {
+    margin-top: 8px;
+}
+
+
+/* Price */
+
+.price {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+
+/* Button Area */
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Product Button */
+
+.card .btn {
+    background-color: #f63e4e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card .btn:hover {
+    background-color: #d82f3d;
+}
+
+
+/* Footer */
+
+footer {
+    margin-top: 50px;
+    background-color: #f3f4f6;
+    height: 20vh;
+}
+
+footer p {
+    text-align: center;
+    line-height: 10vh;
+}
+
+footer p a {
+    text-decoration: none;
+    color: #f63e4e;
+    font-weight: bold;
+}
+
+
+/* Mobile View */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 3%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar .logo img {
+        width: 100px;
+    }
+
+    .navbar .menu li a {
+        margin-left: 10px;
+        font-size: 16px;
+    }
+
+    .content {
+        height: 30vh;
+    }
+
+    .content button {
+        font-size: 25px;
+        top: 40%;
+        left: 10%;
+    }
+
+    .pheading {
+        margin: 15px 0;
+        font-size: 25px;
+    }
+
+    .card {
+        flex-basis: 40%;
+    }
+
+    .card img {
+        height: 200px;
+    }
+}

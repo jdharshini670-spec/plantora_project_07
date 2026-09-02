@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Account - PLANTORA</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eef7ee;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Plantora Logo - Top Left */
+        .navbar-logo {
+            position: fixed;
+            top: 15px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .navbar-logo img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Account Card */
+        .account-card {
+            width: 350px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Plantora Logo Inside Account */
+        .account-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .welcome {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .details {
+            text-align: left;
+            background-color: #f5faf5;
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        .details p {
+            margin: 0;
+            color: #444;
+        }
+
+        .username {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Plantora Logo - Top Left -->
+    <div class="navbar-logo">
+        <img src="Plantora.logo.png" alt="Plantora Logo">
+    </div>
+
+    <!-- Account -->
+    <div class="account-card">
+
+        <!-- Plantora Logo Inside Account -->
+        <img src="Plantora.logo.png" alt="Plantora Logo" class="account-logo">
+
+        <h1>My Account</h1>
+
+        <p class="welcome">
+            Welcome to Plantora!
+        </p>
+
+        <div class="details">
+
+            <p>
+                <strong>Name:</strong>
+                <span id="username" class="username">
+                </span>
+            </p>
+
+        </div>
+
+        <a href="index.html" class="back">
+            ← Back to Home
+        </a>
+
+    </div>
+
+    <script>
+        var savedUsername =
+            localStorage.getItem("plantoraUsername");
+
+        if (savedUsername) {
+            document.getElementById("username").textContent =
+                savedUsername;
+        }
+    </script>
+
+</body>
+
+</html>

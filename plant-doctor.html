@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plant Doctor - Plantora</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9;
+            text-align: center;
+            padding: 30px;
+            margin: 0;
+        }
+
+        .box {
+            background: white;
+            width: 500px;
+            max-width: 95%;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        /* Plantora Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .logo img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .logo h2 {
+            color: #2e7d32;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        h1 {
+            color: green;
+            margin-top: 10px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        input,
+        textarea {
+            width: 90%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #2e7d32;
+        }
+
+        textarea {
+            height: 80px;
+            resize: none;
+        }
+
+        input[type="file"] {
+            border: none;
+            padding: 10px 0;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+
+        #result {
+            margin-top: 25px;
+            text-align: left;
+            color: darkgreen;
+            background-color: #f1f8e9;
+            padding: 15px;
+            border-radius: 10px;
+            line-height: 1.5;
+        }
+
+        #result h3 {
+            text-align: center;
+            color: #2e7d32;
+        }
+
+        /* Mobile Responsive */
+        @media screen and (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .box {
+                width: 100%;
+                padding: 20px;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <!-- Plantora Logo -->
+        <div class="logo">
+            <img src="Plantora.logo.png" alt="Plantora Logo">
+            <h2>PLANTORA</h2>
+        </div>
+
+        <!-- Plant Doctor Heading -->
+        <h1>🌱 Plant Doctor</h1>
+
+        <p>
+            Get plant care assistance by providing your plant details.
+        </p>
+
+        <!-- Plant Name -->
+        <label>Plant Name</label>
+
+        <input type="text"
+               id="plantName"
+               placeholder="Enter plant name">
+
+
+        <!-- Plant Problem -->
+        <label>Plant Problem / Symptoms</label>
+
+        <input type="text"
+               id="plantProblem"
+               placeholder="Example: Yellow leaves">
+
+
+        <!-- Problem Since -->
+        <label>Since When?</label>
+
+        <input type="text"
+               id="problemSince"
+               placeholder="Example: 5 days">
+
+
+        <!-- Additional Details -->
+        <label>Additional Details</label>
+
+        <textarea id="additionalDetails"
+                  placeholder="Describe the problem in detail..."></textarea>
+
+
+        <!-- Plant Image -->
+        <label>Upload Plant Image</label>
+
+        <input type="file"
+               id="plantImage"
+               accept="image/*">
+
+        <br>
+
+
+        <!-- Analyse Button -->
+        <button onclick="checkPlant()">
+            Analyse Plant
+        </button>
+
+
+        <!-- Result -->
+        <div id="result"></div>
+
+    </div>
+
+
+    <script>
+
+        function checkPlant() {
+
+            let plantName =
+                document.getElementById("plantName").value.trim();
+
+            let plantProblem =
+                document.getElementById("plantProblem").value.trim();
+
+            let problemSince =
+                document.getElementById("problemSince").value.trim();
+
+            let additionalDetails =
+                document.getElementById("additionalDetails").value.trim();
+
+            let plantImage =
+                document.getElementById("plantImage");
+
+
+            /* Required Fields Validation */
+
+            if (
+                plantName === "" ||
+                plantProblem === "" ||
+                problemSince === ""
+            ) {
+
+                alert("Please fill in all required plant details.");
+
+                return;
+            }
+
+
+            /* Display Result */
+
+            document.getElementById("result").innerHTML =
+
+                "<h3>🌿 Plant Care Analysis</h3>" +
+
+                "<p><b>Plant Name:</b> " +
+                plantName +
+                "</p>" +
+
+                "<p><b>Reported Problem:</b> " +
+                plantProblem +
+                "</p>" +
+
+                "<p><b>Problem Since:</b> " +
+                problemSince +
+                "</p>" +
+
+                "<p><b>Possible Cause:</b><br>" +
+                "The plant may be experiencing stress due to watering, sunlight, soil conditions, pests, or environmental changes." +
+                "</p>" +
+
+                "<p><b>Recommended Treatment:</b><br>" +
+                "Check the soil moisture, avoid overwatering, provide suitable sunlight, and remove damaged leaves if necessary." +
+                "</p>" +
+
+                "<p><b>Watering Advice:</b><br>" +
+                "Water the plant only when the top layer of soil becomes dry. Avoid keeping the soil continuously wet." +
+                "</p>" +
+
+                "<p><b>Sunlight Requirement:</b><br>" +
+                "Keep the plant in a suitable location with adequate sunlight according to the plant type." +
+                "</p>" +
+
+                "<p><b>Additional Information:</b><br>" +
+                (
+                    additionalDetails ||
+                    "No additional details provided."
+                ) +
+                "</p>" +
+
+                "<p><b>Plant Image:</b><br>" +
+                (
+                    plantImage.files.length > 0
+                        ? "Plant image uploaded successfully."
+                        : "No plant image uploaded."
+                ) +
+                "</p>";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
